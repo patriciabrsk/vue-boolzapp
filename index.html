@@ -22,7 +22,43 @@
 </head>
 <body>
     <main id="app">
+        <div class="container-fluid background d-flex flex-column position-relative">
+            <div class="row">
+                <div class="col-12 green"></div>
+                <div class="col-12 beige"></div>
+            </div>
+            <div id="chat-wrapper" class="position-absolute container h-70 px-0 justify-content-center align-self-center d-flex">
+                <div id="contacts" class="border-end">
+                    <div class="header d-flex h-10 justify-content-between p-2">
+                        <div id="avatar" class="d-flex align-items-center">
+                            <!-- <img src="" alt="">
+                            <h5 id="user-name">Patricia</h5> -->
+                        </div>
+                        <div class="header-icons d-flex align-items-center text-muted">
+                            <i class="fa-solid fa-circle-notch fa-lg"></i>
+                            <i class="fa-solid fa-message fa-lg mx-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg me-3"></i>
+                        </div>
+                    </div>
+                    <div id="notifications" class="py-2 px-3 d-flex align-items-center">
+                        <div class="bell-icon d-flex align-items-center justify-content-center">
+                            <i class="fas fa-bell-slash fa-xl my-light-blue"></i>
+                        </div>
+                        <div class="text px-2">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <p class="text-decoration-underline fs-6 text-muted">Attiva notifiche desktop</p>
+                        </div>
+                    </div>
+                    <div class="search-bar p-1 w-100">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text">
+                    </div>
+                </div>
+                <div id="chat" class="w-70 h-100">
 
+                </div>
+            </div>
+        </div>
     </main>
 
     <script type="text/javascript" src="js/main.js"></script>
