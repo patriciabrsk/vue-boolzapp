@@ -11,8 +11,8 @@ div.beige {
 div#chat-wrapper {
     background-color: white;
     width: 100%;
-    height: 80%;
-    top: 10%;
+    height: 90%;
+    top: 5%;
 }
 
 div#chat-wrapper div#contacts {
@@ -22,7 +22,7 @@ div#chat-wrapper div#contacts {
 div#contacts .header, 
 div#chat .header {
     background-color: #eaeaea;
-    height: 10%;
+    height: 8%;
 }
 
 div#chat-wrapper div#chat {
@@ -46,7 +46,7 @@ div#notifications .bell-icon {
 }
 
 div.search-bar input#search-input::-webkit-input-placeholder,
-div#contact-box p.message {
+div#chat-footer input#message-input::-webkit-input-placeholder {
     font-size: .8rem;
 }
 
@@ -60,19 +60,26 @@ div#contacts #contact-box {
 }
 
 div#contact-chat-info img {
-    width: 20%;
+    width: 15%;
 }
 
 div#chat div.chat-container {
     background-image: url();
-    height: 80%;
+    height: 84%;
+    background-color: #dfd6cf;
 }
 
-div#chat div.chat-message-input {
-    height: 10%;
+div#chat div#chat-footer {
+    height: 8%;
     background-color: #f3eee9;
 }
 
+div#chat-footer input {
+    height: 90%;
+    border: none;
+}
+
+/* Colors */
 .my-light-blue {
     color: #8ddafb;
 }
@@ -83,4 +90,8 @@ div#chat div.chat-message-input {
 
 .my-grey-bg {
     background-color: #f8f8f8;
+}
+
+.my-small-text {
+    font-size: .8rem;
 }
