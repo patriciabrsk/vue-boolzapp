@@ -19,19 +19,21 @@ div#chat-wrapper div#contacts {
     width: 30%;
 }
 
-div#contacts .header {
+div#contacts .header, 
+div#chat .header {
     background-color: #eaeaea;
+    height: 10%;
 }
 
 div#chat-wrapper div#chat {
     width: 70%;
 }
 
-div#chat-wrapper div#avatar {
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    background-color: brown;
+div#chat-wrapper div#user-avatar,
+div#notifications .bell-icon,
+div#contact-avatar {
+    height: 50px;
+    width: 50px;
 }
 
 div#contacts div#notifications {
@@ -40,12 +42,45 @@ div#contacts div#notifications {
 }
 
 div#notifications .bell-icon {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
     background-color: white;
+}
+
+div.search-bar input#search-input::-webkit-input-placeholder,
+div#contact-box p.message {
+    font-size: .8rem;
+}
+
+div#notifications {
+    height: 60px;
+    width: 60px;
+}
+
+div#contacts #contact-box {
+    height: calc(100% / 8);
+}
+
+div#contact-chat-info img {
+    width: 20%;
+}
+
+div#chat div.chat-container {
+    background-image: url();
+    height: 80%;
+}
+
+div#chat div.chat-message-input {
+    height: 10%;
+    background-color: #f3eee9;
 }
 
 .my-light-blue {
     color: #8ddafb;
+}
+
+.my-grey {
+    color: #b1b1b1;
+}
+
+.my-grey-bg {
+    background-color: #f8f8f8;
 }

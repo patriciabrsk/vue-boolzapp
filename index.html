@@ -28,33 +28,66 @@
                 <div class="col-12 beige"></div>
             </div>
             <div id="chat-wrapper" class="position-absolute container h-70 px-0 justify-content-center align-self-center d-flex">
-                <div id="contacts" class="border-end">
-                    <div class="header d-flex h-10 justify-content-between p-2">
-                        <div id="avatar" class="d-flex align-items-center">
-                            <!-- <img src="" alt="">
-                            <h5 id="user-name">Patricia</h5> -->
+                <div id="contacts" class="border-end overflow-auto">
+                    <div class="header d-flex h-10 justify-content-between p-2 align-items-center">
+                        <div id="user-avatar" class="d-flex align-items-center">
+                            <img src="img/avatar_io.jpg" alt="Avatar" class="rounded-circle h-100 me-2">
+                            <h6 id="user-name m-0">Patricia</h6>
                         </div>
-                        <div class="header-icons d-flex align-items-center text-muted">
+                        <div class="header-icons d-flex align-items-center my-grey">
                             <i class="fa-solid fa-circle-notch fa-lg"></i>
                             <i class="fa-solid fa-message fa-lg mx-3"></i>
                             <i class="fa-solid fa-ellipsis-vertical fa-lg me-3"></i>
                         </div>
                     </div>
-                    <div id="notifications" class="py-2 px-3 d-flex align-items-center">
-                        <div class="bell-icon d-flex align-items-center justify-content-center">
+                    <div id="notifications" class="py-2 px-3 d-flex w-100 align-items-center">
+                        <div class="bell-icon d-flex align-items-center rounded-circle justify-content-center">
                             <i class="fas fa-bell-slash fa-xl my-light-blue"></i>
                         </div>
-                        <div class="text px-2">
-                            <p>Ricevi notifiche di nuovi messaggi</p>
-                            <p class="text-decoration-underline fs-6 text-muted">Attiva notifiche desktop</p>
+                        <div class="text px-2 py-2">
+                            <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="m-0 text-decoration-underline fs-6 text-muted">Attiva notifiche desktop</p>
                         </div>
                     </div>
-                    <div class="search-bar p-1 w-100">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text">
+                    <div class="search-bar p-1 w-100 my-grey-bg">
+                        <div class="input-group flex-nowrap d-flex">
+                            <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input id="search-input" type="text" class="form-control" v-model="searchInput" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <div class="contacts-list">
+                        <div id="contact-box" class="py-2 px-3 d-flex w-100 my-grey-bg border-bottom" v-for="contact in contacts">
+                            <div id="contact-chat-info" class="d-flex">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="Contact Avatar" class="rounded-circle me-2">
+                                <div class="contact-text px-2">
+                                    <h6 class="m-0">{{ contact.name }}</h6>
+                                    <p class="message m-0 fs-6 text-muted">Ultimo messaggio inviato</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div id="chat" class="w-70 h-100">
+                    <div class="header d-flex justify-content-between p-2 align-items-center">
+                        <div id="user-avatar" class="d-flex align-items-center">
+                            <img src="img/avatar_io.jpg" alt="Avatar" class="rounded-circle h-100 me-2">
+                            <h6 id="user-name">P</h6>
+                        </div>
+                        <div class="header-icons d-flex align-items-center my-grey">
+                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                            <i class="fa-solid fa-paperclip fa-lg mx-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg me-3"></i>
+                        </div>
+                    </div>
+                    <div class="chat-container">
+
+
+                    </div>
+                    <div id="chat-message-input" class="d-flex align-items-center">
+                        <input id="message-input" type="text"placeholder="Scrivi un messaggio">
+                    </div>
 
                 </div>
             </div>

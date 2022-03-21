@@ -164,11 +164,23 @@ const app = new Vue(
                         }
                     ],
                 }
-            ]
-            
+            ],
+            contactsToBeDisplayed: [],
+            searchInput: '',
+
+            newMessage: '',
+            chatDisplayed: {}
         },
         
         methods: {
+            filteredContacts: function() {
+                return this.contactsToBeDisplayed.filter((contact) => {
+                    return contact.name.match(this.searchInput);
+                });
             }
+
+
+
+        }
     }
 );
