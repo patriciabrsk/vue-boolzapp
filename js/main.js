@@ -2,7 +2,6 @@ const app = new Vue(
     {
         el: '#app',
         data: {
-            currentIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -166,30 +165,25 @@ const app = new Vue(
                     ],
                 }
             ],
+            currentIndex: 0,
             searchInput: '',
-            contactsToBeDisplayed: [],
             newMessage: '',
-            chatDisplayed: {
-                // messages: [
-                //     {
-
-                //     }
-                // ]
-            }
+            chatDisplayed: {}
         },
         
         methods: {
-            filteredContacts() {
-                this.contactsToBeDisplayed = this.contacts.filter((contact) => {
-                    contact.name.match(this.searchInput);
-                });
-            },
 
             selectChat(index) {
                 this.currentIndex = index;
+                return this.currentIndex;
             },
 
-            sendNewMessage() {
+            setChatIndex(contact) {
+                this.chatDisplayed = contact;
+                return this.chatDisplayed;
+            },
+
+            sendNewMessage(contact) {
                 if (this.newMessage.trim() !== '') {
                     this.chatDisplayed.messages.push(
                         {
@@ -200,7 +194,15 @@ const app = new Vue(
                     )
                 }
             },
+        },
 
+        computed: {
+            filteredContacts() {
+                return this.contacts.filter((contact) => {
+                    return contact.name.match(this.searchInput);
+                });
+            },
         }
+        
     }
 );
