@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#app',
         data: {
+            currentIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
