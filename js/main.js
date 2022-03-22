@@ -174,12 +174,10 @@ const app = new Vue(
         
         methods: {
             filteredContacts: function() {
-                return this.contactsToBeDisplayed.filter((contact) => {
-                    return contact.name.match(this.searchInput);
+                this.contactsToBeDisplayed = this.contacts.filter((contact) => {
+                    contact.name.match(this.searchInput);
                 });
             }
-
-
 
         }
     }

@@ -57,16 +57,16 @@
                     </div>
 
                     <div class="contacts-list">
-                        <div id="contact-box" class="py-2 px-3 d-flex w-100 my-grey-bg border-bottom" v-for="contact in contacts">
+                        <div id="contact-box" class="py-2 px-3 d-flex w-100 border-bottom justify-content-between" v-for="contact in contacts">
                             <div id="contact-chat-info" class="d-flex">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="Contact Avatar" class="rounded-circle me-2">
                                 <div class="contact-text px-2">
                                     <h6 class="m-0">{{ contact.name }}</h6>
                                     <p class="message m-0 text-muted my-small-text">Ultimo messaggio inviato</p>
                                 </div>
-                                <div class="time">
-                                    <span class=" text-muted my-small-text">Time</span>
-                                </div>
+                            </div>
+                            <div class="time">
+                                    <span class="text-muted my-small-text">Time</span>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,15 @@
                     </div>
 
                     <div class="chat-container overflow-auto">
+                        <div class="msg sent-message p-3 rounded-3">
+                            Message
+                            <span class="timestamp">00:00</span>
+                        </div>
 
+                        <div class="msg received-message p-3 rounded-3">
+                            Message
+                            <span class="timestamp">00:00</span>
+                        </div>
                     </div>
 
                     <div id="chat-footer" class="d-flex align-items-center justify-content-between py-2">

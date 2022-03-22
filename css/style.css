@@ -38,12 +38,11 @@ div#contact-avatar {
 
 div#contacts div#notifications {
     background-color: #8ddafb;
-    height: 85px;
+    height: 80px;
 }
 
 div#notifications .bell-icon {
     background-color: white;
-    cursor: pointer;
 }
 
 div.search-bar input#search-input::-webkit-input-placeholder,
@@ -56,8 +55,8 @@ div#notifications {
     width: 60px;
 }
 
-div#contacts #contact-box {
-    height: calc(100% / 8);
+div#contacts #contact-box.active{
+    background-color: #d4d3d3;
 }
 
 div#contacts #contact-box:hover {
@@ -69,10 +68,13 @@ div#contact-chat-info img {
 }
 
 div#chat div.chat-container {
-    background-image: url();
+    background-image: url('../img/mine.jpg');
     height: 84%;
-    background-color: #dfd6cf;
 }
+
+div#chat div.chat-container .sent-message {}
+
+div#chat div.chat-container .received-message {}
 
 div#chat div#chat-footer {
     height: 8%;
