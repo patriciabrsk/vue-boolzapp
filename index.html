@@ -60,7 +60,7 @@
                     <div class="contacts-list">
                         <div id="contact-box" class="py-2 px-3 d-flex w-100 border-bottom justify-content-between" v-for="(contact, index) in filteredContacts" 
                         :class="(index == currentIndex) ? 'active' : '' " 
-                        @click="selectChat(index)">
+                        @click="selectContactChat(index)">
                             <div id="contact-chat-info" class="d-flex">
                                 <img :src="`img/avatar${filteredContacts[index].avatar}.jpg`" alt="Contact Avatar" class="rounded-circle me-2">
                                 <div class="contact-text px-2">
@@ -96,7 +96,7 @@
                     <div class="chat-container container overflow-auto d-flex p-5 justify-content-center">
                         <div class="row w-100 justify-content-between">
                             <div class="col-4 p-0">
-                                <div class="msg  p-2 rounded-3 d-flex flex-column" v-for="(message, index) in filteredContacts[currentIndex].messages"
+                                <div class="msg p-2 rounded-3 d-flex flex-column" v-for="(message, index) in filteredContacts[currentIndex].messages"
                                 :class="(filteredContacts[currentIndex].messages[index].status == 'sent') ? 'sent-message' : 'received-message'">
                                     <p class="m-0">{{ filteredContacts[currentIndex].messages[index].message }}</p>
                                     <span class="timestamp my-smaller-text text-end text-muted align-self-end">00:00</span>

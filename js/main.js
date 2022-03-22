@@ -168,30 +168,31 @@ const app = new Vue(
             currentIndex: 0,
             searchInput: '',
             newMessage: '',
-            chatDisplayed: {}
+            currentChat: null
         },
         
         methods: {
 
-            selectChat(index) {
+            selectContactChat(index) {
                 this.currentIndex = index;
                 return this.currentIndex;
             },
 
-            setChatIndex(contact) {
-                this.chatDisplayed = contact;
-                return this.chatDisplayed;
+            setChatIndex(index) {
+                this.currentChat = index;
+                return this.currentChat;
             },
 
             sendNewMessage(contact) {
                 if (this.newMessage.trim() !== '') {
-                    this.chatDisplayed.messages.push(
+                    this.filteredContacts[contact].messages.push(
                         {
-                            date: dayjs(),
+                            date: dayjs().format(),
                             message: this.newMessage,
                             status: 'sent'
                         }
-                    )
+                    );
+                    this.newMessage = '';
                 }
             },
         },
