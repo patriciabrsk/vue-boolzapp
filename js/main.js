@@ -166,19 +166,40 @@ const app = new Vue(
                     ],
                 }
             ],
-            contactsToBeDisplayed: [],
             searchInput: '',
-
+            contactsToBeDisplayed: [],
             newMessage: '',
-            chatDisplayed: {}
+            chatDisplayed: {
+                // messages: [
+                //     {
+
+                //     }
+                // ]
+            }
         },
         
         methods: {
-            filteredContacts: function() {
+            filteredContacts() {
                 this.contactsToBeDisplayed = this.contacts.filter((contact) => {
                     contact.name.match(this.searchInput);
                 });
-            }
+            },
+
+            selectChat(index) {
+                this.currentIndex = index;
+            },
+
+            sendNewMessage() {
+                if (this.newMessage.trim() !== '') {
+                    this.chatDisplayed.messages.push(
+                        {
+                            date: dayjs(),
+                            message: this.newMessage,
+                            status: 'sent'
+                        }
+                    )
+                }
+            },
 
         }
     }
