@@ -58,6 +58,7 @@ div#notifications {
 div#contacts #contact-box.active,
 div#contacts #contact-box:hover {
     background-color: #ebebeb;
+    cursor: pointer;
 }
 
 div#contact-chat-info img {
