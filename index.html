@@ -94,14 +94,14 @@
                     </div>
 
                     <div class="chat-container container overflow-auto d-flex p-5 justify-content-center">
-                        <div class="row w-100 justify-content-between">
-                            <div class="col-4 p-0">
-                                <div class="msg p-2 rounded-3 d-flex flex-column" v-for="(message, index) in filteredContacts[currentIndex].messages"
-                                :class="(filteredContacts[currentIndex].messages[index].status == 'sent') ? 'sent-message' : 'received-message'">
+                        <div class="row w-100 g-2 flex-column">
+                            <!-- <div class="col-4 p-0"> -->
+                                <div class="msg col-4 p-2 rounded-3 d-flex flex-column" v-for="(message, index) in filteredContacts[currentIndex].messages"
+                                :class="(filteredContacts[currentIndex].messages[index].status == 'sent') ? 'sent-message align-self-end' : 'received-message'">
                                     <p class="m-0">{{ filteredContacts[currentIndex].messages[index].message }}</p>
                                     <span class="timestamp my-smaller-text text-end text-muted align-self-end">00:00</span>
                                 </div>
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
 
