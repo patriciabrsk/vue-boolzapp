@@ -187,7 +187,7 @@ const app = new Vue(
                 if (this.newMessage.trim() !== '') {
                     this.filteredContacts[index].messages.push(
                         {
-                            date: dayjs().format(),
+                            date: dayjs().format('HH:mm'),
                             message: this.newMessage,
                             status: 'sent'
                         }
