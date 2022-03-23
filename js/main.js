@@ -183,9 +183,9 @@ const app = new Vue(
                 return this.currentChat;
             },
 
-            sendNewMessage(contact) {
+            sendNewMessage(index) {
                 if (this.newMessage.trim() !== '') {
-                    this.filteredContacts[contact].messages.push(
+                    this.filteredContacts[index].messages.push(
                         {
                             date: dayjs().format(),
                             message: this.newMessage,
@@ -200,7 +200,7 @@ const app = new Vue(
         computed: {
             filteredContacts() {
                 return this.contacts.filter((contact) => {
-                    return contact.name.match(this.searchInput);
+                    return contact.name.toLowerCase().match(this.searchInput.toLowerCase());
                 });
             },
         }

@@ -52,13 +52,15 @@
                     <div class="search-bar p-1 w-100 my-grey-bg">
                         <div class="input-group input-group-sm flex-nowrap d-flex">
                             <span class="input-group-text"><i class="fa-solid fa-magnifying-glass my-grey"></i></span>
-                            <input id="search-input" type="text" class="form-control" v-model="searchInput" placeholder="Cerca o inizia una nuova chat"
+                            <input id="search-input" type="text" class="form-control" v-model="searchInput" 
+                            placeholder="Cerca o inizia una nuova chat"
                             @keydown.enter="filteredContacts()">
                         </div>
                     </div>
 
                     <div class="contacts-list">
-                        <div id="contact-box" class="py-2 px-3 d-flex w-100 border-bottom justify-content-between" v-for="(contact, index) in filteredContacts" 
+                        <div id="contact-box" class="py-2 px-3 d-flex w-100 border-bottom justify-content-between" 
+                        v-for="(contact, index) in filteredContacts" 
                         :class="(index == currentIndex) ? 'active' : '' " 
                         @click="selectContactChat(index)">
                             <div id="contact-chat-info" class="d-flex">
@@ -95,13 +97,14 @@
 
                     <div class="chat-container container overflow-auto d-flex p-5 justify-content-center">
                         <div class="row w-100 g-2 flex-column">
-                            <!-- <div class="col-4 p-0"> -->
-                                <div class="msg col-4 p-2 rounded-3 d-flex flex-column" v-for="(message, index) in filteredContacts[currentIndex].messages"
+                                <div class="msg col-5 p-2 rounded-3 d-flex flex-column" 
+                                v-for="(message, index) in filteredContacts[currentIndex].messages"
                                 :class="(filteredContacts[currentIndex].messages[index].status == 'sent') ? 'sent-message align-self-end' : 'received-message'">
                                     <p class="m-0">{{ filteredContacts[currentIndex].messages[index].message }}</p>
-                                    <span class="timestamp my-smaller-text text-end text-muted align-self-end">{{ filteredContacts[currentIndex].messages[index].date }}</span>
+                                    <span class="timestamp my-smaller-text text-end text-muted align-self-end">
+                                        {{ filteredContacts[currentIndex].messages[index].date }}
+                                    </span>
                                 </div>
-                            <!-- </div> -->
                         </div>
                     </div>
 
@@ -110,7 +113,8 @@
                             <i class="fa-regular fa-face-smile fa-xl"></i>
                         </div>
                         <div class="message-input-wrapper d-flex align-items-center h-100 w-100 text-muted">
-                            <input id="message-input" type="text" placeholder="Scrivi un messaggio" class="rounded-3 w-100 px-3" v-model="newMessage" @keydown.enter="sendNewMessage(currentIndex)">
+                            <input id="message-input" type="text" placeholder="Scrivi un messaggio" class="rounded-3 w-100 px-3" 
+                            v-model="newMessage" @keydown.enter="sendNewMessage(currentIndex)">
                         </div>
                         <div class="voice-message-icon d-flex justify-content-center align-items-center px-5 text-secondary">
                             <i class="fas fa-microphone fa-xl"></i>
@@ -121,6 +125,9 @@
             </div>
         </div>
     </main>
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
 
     <script type="text/javascript" src="js/main.js"></script>
 </body>
