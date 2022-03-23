@@ -206,9 +206,9 @@ const app = new Vue(
                 }
             },
 
-            // getTime(date) {
-            //     return dayjs(date, "DD/MM/YYYY HH:mm:ss").format("HH:mm");
-            // }
+            getTime(date) {
+                return dayjs(date, "DD/MM/YYYY HH:mm:ss").format("HH:mm");
+            }
         },
 
         computed: {
